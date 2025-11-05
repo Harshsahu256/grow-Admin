@@ -379,7 +379,7 @@
 //           >
 //             <h3
 //               className="mb-3 text-center"
-//               style={{ color: "#0d47a1", fontWeight: 600 }}
+//               style={{ color: "#222222ff", fontWeight: 600 }}
 //             >
 //               Accounts List
 //             </h3>

@@ -91,21 +91,22 @@ const UsersListPage = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState(""); // search filter
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const data = await getAllUsers();
-        console.log("Users API Response:", data);
-        setUsers(data.users || []);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-        setUsers([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchUsers();
-  }, []);
+ useEffect(() => {
+  const fetchUsers = async () => {
+    try {
+      const data = await getAllUsers(); // already returns array
+      console.log("Users API Response:", data);
+      setUsers(data); // <- direct set
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      setUsers([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchUsers();
+}, []);
+
 
   // Filter users by name, email, or account number
   const filteredUsers = users.filter(

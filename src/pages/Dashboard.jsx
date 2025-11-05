@@ -812,6 +812,7 @@ import { House, User, Folder, BarChart2, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import UsersListPage from "./UserListPage";
 import AccountPage from "./AccountPage";
+import AddTradeForm from "./PositionForm";
 
 
 
@@ -819,7 +820,7 @@ const sidebarOptions = [
   { name: "Home", icon: <House size={20} /> },
   { name: "Accounts", icon: <Folder size={20} /> },
   { name: "Users", icon: <User size={20} /> },
-  { name: "Reports", icon: <BarChart2 size={20} /> },
+  { name: "Positions", icon: <BarChart2 size={20} /> },
   { name: "Settings", icon: <Settings size={20} /> },
 ];
 
@@ -858,7 +859,7 @@ const TradingDashboard = () => {
           zIndex: 1000,
         }}
       >
-        <h3 className="text-primary mb-4">GROW ADMIN</h3>
+        <h3 className="text-primary mb-4">PRIME ADMIN</h3>
         {sidebarOptions.map((opt) => (
           <Button
             key={opt.name}
@@ -962,6 +963,8 @@ const TradingDashboard = () => {
           )}
           {active === "Users" && <UsersListPage />}
           {active === "Accounts" && <AccountPage />}
+          {active === "Positions" && <AddTradeForm />}
+
         </div>
       </div>
     </div>
