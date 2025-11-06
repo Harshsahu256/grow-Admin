@@ -308,3 +308,20 @@ export const getAllPositions = async () => {
 };
 
 
+export const getAllFilesForAdmin = async () => {
+  try {
+    const token = getToken();
+    const url = `${API_BASE_URL}${API_ENDPOINT.GET_FILES}`.replace(/([^:]\/)\/+/g, "$1");
+
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    return response.data.files || [];
+  } catch (error) {
+    console.error("❌ Error fetching admin files:", error.response?.data || error.message);
+    throw error;
+  }
+};

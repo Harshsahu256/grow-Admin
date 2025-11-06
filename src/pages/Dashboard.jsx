@@ -813,6 +813,7 @@ import { useNavigate } from "react-router-dom";
 import UsersListPage from "./UserListPage";
 import AccountPage from "./AccountPage";
 import AddTradeForm from "./PositionForm";
+import AdminFiles from "./AdminFiles";
 
 
 
@@ -821,7 +822,7 @@ const sidebarOptions = [
   { name: "Accounts", icon: <Folder size={20} /> },
   { name: "Users", icon: <User size={20} /> },
   { name: "Positions", icon: <BarChart2 size={20} /> },
-  { name: "Settings", icon: <Settings size={20} /> },
+  { name: "Payments Uploads", icon: <Settings size={20} /> },
 ];
 
 const sampleStocks = [
@@ -964,6 +965,7 @@ const TradingDashboard = () => {
           {active === "Users" && <UsersListPage />}
           {active === "Accounts" && <AccountPage />}
           {active === "Positions" && <AddTradeForm />}
+          {active === "Payments Uploads" && <AdminFiles />}
 
         </div>
       </div>

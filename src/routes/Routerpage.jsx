@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import UsersListPage from "../pages/UserListPage";
 import AccountPage from "../pages/AccountPage";
+import AdminFiles from "../pages/AdminFiles";
 
 const RouterPage = () => {
   return (
@@ -16,6 +17,8 @@ const RouterPage = () => {
         <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<UsersListPage />} />
            <Route path="/account" element={<AccountPage />} />
+           <Route path="/admin/files" element={<AdminFiles />} />
+
       </Routes>
     </Router>
   );
