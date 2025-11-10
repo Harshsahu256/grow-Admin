@@ -23,6 +23,15 @@ export const API_ENDPOINT = {
   // 🆕 Position-related endpoints
   ADD_POSITION: "/addPosition", // Create new trade/position
   GET_POSITIONS: "/positions", // Get all trades (for dashboard)
-  GET_FILES: "/files"
+  GET_FILES: "/files",
+
+  // ✅ Approve File
+  APPROVE_FILE: "/approve",
+  
+ GET_WITHDRAW: "/getAllWithdrawRequests",
+
+ UPDATE_WITHDRAW: "/update"  
+
+
 
 };

@@ -814,6 +814,8 @@ import UsersListPage from "./UserListPage";
 import AccountPage from "./AccountPage";
 import AddTradeForm from "./PositionForm";
 import AdminFiles from "./AdminFiles";
+import WithdrawRequest from "./WithdrawRequest";
+import AdminMessages from "./AdminMessages";
 
 
 
@@ -823,6 +825,9 @@ const sidebarOptions = [
   { name: "Users", icon: <User size={20} /> },
   { name: "Positions", icon: <BarChart2 size={20} /> },
   { name: "Payments Uploads", icon: <Settings size={20} /> },
+  { name: "Withdraw Request", icon: <Settings size={20} /> },
+   { name: "Messages", icon: <Settings size={20} /> },
+  
 ];
 
 const sampleStocks = [
@@ -966,6 +971,8 @@ const TradingDashboard = () => {
           {active === "Accounts" && <AccountPage />}
           {active === "Positions" && <AddTradeForm />}
           {active === "Payments Uploads" && <AdminFiles />}
+          {active === "Withdraw Request" && <WithdrawRequest />}
+         {active === "Messages" && <AdminMessages />}
 
         </div>
       </div>
