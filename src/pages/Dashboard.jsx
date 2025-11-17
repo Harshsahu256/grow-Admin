@@ -816,6 +816,7 @@ import AddTradeForm from "./PositionForm";
 import AdminFiles from "./AdminFiles";
 import WithdrawRequest from "./WithdrawRequest";
 import AdminMessages from "./AdminMessages";
+import AdminUserManagement from "./AdminUserManagement";
 
 
 
@@ -827,6 +828,7 @@ const sidebarOptions = [
   { name: "Payments Uploads", icon: <Settings size={20} /> },
   { name: "Withdraw Request", icon: <Settings size={20} /> },
    { name: "Messages", icon: <Settings size={20} /> },
+   { name: "Info", icon: <Settings size={20} /> },
   
 ];
 
@@ -865,7 +867,7 @@ const TradingDashboard = () => {
           zIndex: 1000,
         }}
       >
-        <h3 className="text-primary mb-4">PRIME ADMIN</h3>
+        <h3 className="text-primary mb-4">GROW ADMIN</h3>
         {sidebarOptions.map((opt) => (
           <Button
             key={opt.name}
@@ -973,6 +975,7 @@ const TradingDashboard = () => {
           {active === "Payments Uploads" && <AdminFiles />}
           {active === "Withdraw Request" && <WithdrawRequest />}
          {active === "Messages" && <AdminMessages />}
+         {active === "Info" && <AdminUserManagement />}
 
         </div>
       </div>
