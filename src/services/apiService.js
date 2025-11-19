@@ -596,3 +596,57 @@ export const getAllMessages = async () => {
     throw error.response?.data || { message: "Something went wrong" };
   }
 };
+
+
+
+// ❌ Delete Position
+export const deletePosition = async (id) => {
+  try {
+    const response = await adminAPI.delete(`${API_ENDPOINT.DELETE_POSITION}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("❌ Error deleting position:", error);
+    if (error.response && error.response.data) throw error.response.data;
+    else throw { message: "Something went wrong" };
+  }
+};
+
+
+
+
+export const updateUserStatus = async (userId, status) => {
+  const res = await fetch(`${API_BASE_URL}${API_ENDPOINT.UPDATE_USER_STATUS}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+    },
+    body: JSON.stringify({ userId, status }),
+  });
+
+  const data = await res.json();
+  return data;
+};
+
+// ----------------------------------------
+// 📞 Admin Contact Management
+// ----------------------------------------
+export const getAdminContact = async () => {
+  try {
+    const response = await adminAPI.get("/contact");
+    return response.data;
+  } catch (error) {
+    console.error("❌ Error fetching contact details:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+export const updateAdminContact = async (contactData) => {
+  try {
+    const response = await adminAPI.put("http://localhost:5000/api/admin/contact", contactData);
+    return response.data;
+  } catch (error) {
+    console.error("❌ Error updating contact details:", error.response?.data || error.message);
+    throw error;
+  }
+};

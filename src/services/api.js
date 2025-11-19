@@ -75,4 +75,13 @@ REJECT_USER: "/admin/reject-user",
 
   // Contact Messages
   GET_MESSAGES: "/messages", // Get all contact messages
+
+  DELETE_POSITION: "/deletePosition", // /deletePosition/:id
+
+ UPDATE_USER_STATUS : "/update-status",
+
+  // Contact Management
+  GET_CONTACT: "/contact",          // Get current contact details
+  UPDATE_CONTACT: "/contact/update" // Update contact details
+
 };

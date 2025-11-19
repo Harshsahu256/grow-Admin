@@ -35,7 +35,7 @@ const UsersListPage = () => {
   );
 
   return (
-    <Container fluid style={{ padding: "20px", color: "#000" }}>
+    <Container fluid style={{ padding: "20px", color: "#ffffffff" }}>
       <h2 className="mb-4">All Users</h2>
 
       {/* Search Box */}
