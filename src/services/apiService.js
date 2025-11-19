@@ -643,10 +643,38 @@ export const getAdminContact = async () => {
 
 export const updateAdminContact = async (contactData) => {
   try {
-    const response = await adminAPI.put("http://localhost:5000/api/admin/contact", contactData);
+    const response = await adminAPI.put(API_ENDPOINT.UPDATE_CONTACT, contactData);
     return response.data;
   } catch (error) {
     console.error("❌ Error updating contact details:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+
+// Get all users with totalAmount
+// ---------------------------------------
+export const getUsersAmount = async () => {
+  try {
+    const response = await adminAPI.get(API_ENDPOINT.GET_USERS_AMOUNT);
+    return response.data; // { success: true, data: [...] }
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+};
+
+// ---------------------------------------
+// Update a specific user's totalAmount
+// ---------------------------------------
+export const updateUseTotalAmount = async (userId, newAmount) => {
+  try {
+    const response = await adminAPI.put(`${API_ENDPOINT.UPDATE_USER_AMOUNT}/${userId}`, {
+      newAmount,
+    });
+    return response.data; // { success: true, totalAmount: ... }
+  } catch (error) {
+    console.error("Error updating amount:", error);
     throw error;
   }
 };

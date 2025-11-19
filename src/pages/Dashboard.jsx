@@ -355,16 +355,19 @@ import WithdrawRequest from "./WithdrawRequest";
 import AdminMessages from "./AdminMessages";
 import AdminUserManagement from "./AdminUserManagement";
 import AdminContactForm from "./AdminContactForm";
+import AdminAmountManager from "./AdminAmountManager";
 
 const sidebarOptions = [
-  { name: "Home", icon: <House size={20} /> },
-  { name: "Users", icon: <User size={20} /> },
+  { name: "User Management", icon: <House size={20} /> },
+  { name: "Users Details", icon: <User size={20} /> },
   { name: "Accounts", icon: <Folder size={20} /> },
   { name: "Positions", icon: <BarChart2 size={20} /> },
   { name: "Payments Uploads", icon: <Settings size={20} /> },
   { name: "Withdraw Request", icon: <Settings size={20} /> },
+   { name: "Amount", icon: <Settings size={20} /> },
   { name: "Messages", icon: <Settings size={20} /> },
-  { name: "Contact", icon: <Settings size={20} /> },
+  { name: "Contact Info", icon: <Settings size={20} /> },
+  { name: "Amount", icon: <Settings size={20} /> },
 ];
 
 const TradingDashboard = () => {
@@ -546,15 +549,15 @@ const TradingDashboard = () => {
           }}
         >
           {/* Only AdminUserManagement component for Home */}
-          {active === "Home" && <AdminUserManagement />}
-
-          {active === "Users" && <UsersListPage />}
+          {active === "User Management" && <AdminUserManagement />}
+          {active === "Users Details" && <UsersListPage />}
           {active === "Accounts" && <AccountPage />}
           {active === "Positions" && <AddTradeForm />}
           {active === "Payments Uploads" && <AdminFiles />}
           {active === "Withdraw Request" && <WithdrawRequest />}
           {active === "Messages" && <AdminMessages />}
-          {active === "Contact" && <AdminContactForm />}
+          {active === "Contact Info" && <AdminContactForm />}
+          {active === "Amount" && <AdminAmountManager/>}
         </div>
       </div>
     </div>
