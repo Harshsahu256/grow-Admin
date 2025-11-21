@@ -82,7 +82,7 @@ REJECT_USER: "/admin/reject-user",
 
   // Contact Management
   GET_CONTACT: "/contact",          // Get current contact details
-  UPDATE_CONTACT: "/contact/update", // Update contact details
+  UPDATE_CONTACT: "/contact", // Update contact details
 
   // User totalAmount management
   GET_USERS_AMOUNT: "/users-amount",          // GET all users with totalAmount

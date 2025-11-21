@@ -367,7 +367,6 @@ const sidebarOptions = [
    { name: "Amount", icon: <Settings size={20} /> },
   { name: "Messages", icon: <Settings size={20} /> },
   { name: "Contact Info", icon: <Settings size={20} /> },
-  { name: "Amount", icon: <Settings size={20} /> },
 ];
 
 const TradingDashboard = () => {
