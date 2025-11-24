@@ -42,6 +42,10 @@
 export const API_BASE_URL = "http://localhost:5000/api/admin"; // Base URL for admin APIs
 
 
+
+// export const API_BASE_URL = "https://app.smigc.in/api/admin";
+
+
 // 📍 All Admin Endpoints
 export const API_ENDPOINT = {
   // Authentication
